@@ -100,8 +100,8 @@ id
 <主表名含义部分>_id（user_id）
 
 6. 索引
-- IDX_<表名>_<构成索引的字段名>
-- IDX_<表名>_COMPOSITE_<编号>（复合索引情况，编号从1自增）
+- IDX_<表名含义部分>_<构成索引的字段名>
+- IDX_<表名含义部分>_COMPOSITE_<编号>（复合索引情况，编号从1自增）
 7. 视图（TBD，用到再定）
 8. 存储过程
 
@@ -224,17 +224,17 @@ create table template
 );
 
 /*==============================================================*/
-/* Index: index_uuid                                            */
+/* Index: idx_template_uuid                                     */
 /*==============================================================*/
-create unique index index_uuid on template
+create unique index idx_template_uuid on template
 (
    uuid
 );
 
 /*==============================================================*/
-/* Index: index_delete_flag                                     */
+/* Index: idx_template_delete_flag                              */
 /*==============================================================*/
-create index index_delete_flag on template
+create index idx_template_delete_flag on template
 (
    delete_flag
 );

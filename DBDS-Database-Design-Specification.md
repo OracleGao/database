@@ -255,7 +255,7 @@ create index idx_template_delete_flag on template
 # 数据库选择
 ## mysql数据库
 
-版本：5.7.x
+版本：5.7.x (支持建表标准时间格式，支持json数据类型)
 
 #Reference
 1. http://blog.csdn.net/swarb/article/details/22919817

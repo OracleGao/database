@@ -246,6 +246,6 @@ create index idx_template_delete_flag on template
 - 所有存放枚举值的列必须创建索引
 - 所有作为外键关联的列必须创建索引
 
-#Reference
+# Reference
 1. http://blog.csdn.net/swarb/article/details/22919817
 2. https://stackoverflow.com/questions/15896055/mysql-char-vs-int

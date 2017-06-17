@@ -79,8 +79,8 @@ If you have a fixed size then you can use char(8) -> 8B , mysql works much faste
 - 命名单词以下划线分割
 - 命名中禁止使用SQL关键字。
 2. 表
-
-<前缀>_<含义单词1>_<含义单词2>_...
+- 表名不使用复数名词
+- <前缀>_<含义单词1>_<含义单词2>_...
 
 - ec_: 电商表
 - saas_: saas表
@@ -246,6 +246,12 @@ create index idx_template_delete_flag on template
 - 所有存放枚举值的列必须创建索引
 - 所有作为外键关联的列必须创建索引
 
-# Reference
+3. sql语句编写（最佳实践）
+- 小数类型为decimal，禁止使用float和double。 说明：float和double在存储的时候，存在精度损失的问题，很可能在值的比较时，得到不正确的结果。如果存储的数据范围超过decimal的范围，建议将数据拆成整数和小数分开存储。
+- 如果存储的字符串长度相对固定，使用char定长字符串类型。
+- 所有boolean类型的状态字段需要用‘*_flag’表示，类型是int(1)，0表示否1表示是。
+- 所有多对多的中间映射表表名称为 ‘主_从_map’。
+
+#Reference
 1. http://blog.csdn.net/swarb/article/details/22919817
 2. https://stackoverflow.com/questions/15896055/mysql-char-vs-int

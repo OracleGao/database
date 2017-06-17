@@ -241,10 +241,10 @@ create index idx_template_delete_flag on template
 ```
 
 2. 字段索引规范
-2.1   id作为所有表的主键且必须建立主键索引
-2.2   uuid为了隐藏id自增逻辑，使用全表唯一值，必须建立唯一索引
-2.3   所有存放枚举值的列必须创建索引
-2.4   所有作为外键关联的列必须创建索引
+- id作为所有表的主键且必须建立主键索引
+- uuid为了隐藏id自增逻辑，使用全表唯一值，必须建立唯一索引
+- 所有存放枚举值的列必须创建索引
+- 所有作为外键关联的列必须创建索引
 
 #Reference
 1. http://blog.csdn.net/swarb/article/details/22919817

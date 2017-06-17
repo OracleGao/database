@@ -214,7 +214,7 @@ SQL语句的编写，变量尽量使用“?”绑定变量。
 create table template
 (
    id                   bigint(20) not null auto_increment comment 'ID编号',
-   uuid                 varchar(64) not null default NULL comment 'UUID',
+   uuid                 varchar(64) not null comment 'UUID',
    delete_flag          int(1) default 0 comment '0:正常, 1:删除',
    add_user_id          bigint(20) default 0 comment '添加人ID',
    add_time             datetime default CURRENT_TIMESTAMP comment '添加时间',
@@ -251,6 +251,11 @@ create index idx_template_delete_flag on template
 - 如果存储的字符串长度相对固定，使用char定长字符串类型。
 - 所有boolean类型的状态字段需要用‘*_flag’表示，类型是int(1)，0表示否1表示是。
 - 所有多对多的中间映射表表名称为 ‘主_从_map’。
+
+# 数据库选择
+## mysql数据库
+
+版本：5.7.x
 
 #Reference
 1. http://blog.csdn.net/swarb/article/details/22919817
